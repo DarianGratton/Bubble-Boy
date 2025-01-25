@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
     public float sizeScaleMod;
     public float sizeZoomMod;
     public float size;
+    public float sizeLossOnHit;
+    public string obstacleTagName;
+    public string bubbleTagName;
 
     void Awake()
     {
@@ -16,14 +19,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        UpdateSpeed();
-        UpdateSize();
-        UpdateZoom();
+        
     }
 
     //When the player runs into a collectable bubble they grow and start moving faster
-    void CollectBubble(float bubbleSize)
+    private void CollectBubble(float bubbleSize)
     {
+        Debug.Log("Collecting Bubble");
         size += bubbleSize;
         UpdateSpeed();
         UpdateSize();
@@ -31,23 +33,33 @@ public class PlayerController : MonoBehaviour
     }
 
     //When getting hit, the player loses size and speed
-    void TakeDamage(float damage)
+    private void TakeDamage()
     {
-        size -= damage;
+        size -= sizeLossOnHit;
+
+        if (size < 1)
+            LoseGame();
+
         UpdateSpeed();
         UpdateSize();
         UpdateZoom();
     }
 
+    //ADD CODE HERE WHEN THE PLAYER'S BUBBLE POPS
+    private void LoseGame()
+    {
+        
+    }
+
     //Helper function to correct speed once size changes
-    void UpdateSize()
+    private void UpdateSize()
     {
         float newScale = size * sizeScaleMod;
         transform.localScale = new Vector3(newScale, newScale, newScale);
     }
 
     //Helper function to correct speed once size changes
-    void UpdateSpeed()
+    private void UpdateSpeed()
     {
         //Update player velocity THIS WILL BE BAD ONCE WE HAVE OTHER Y AXIS FORCES, CHANGE LATER
         Rigidbody rbP = GetComponent<Rigidbody>();
@@ -61,9 +73,29 @@ public class PlayerController : MonoBehaviour
     }
     
     //Helper function to correct camera zoom once size changes
-    void UpdateZoom()
+    private void UpdateZoom()
     {
         Vector3 camPos = Camera.main.transform.position;
         Camera.main.transform.position = new Vector3(camPos.x, camPos.y, -size * sizeZoomMod);
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        //If collided object is an obstacle, take damage and shrink the bubble
+        if (collider.gameObject.CompareTag(obstacleTagName))
+        {
+            Debug.Log("Not bubble");
+            TakeDamage();
+        }
+        else if (collider.gameObject.CompareTag(bubbleTagName))
+        {
+            Debug.Log(collider.gameObject.tag);
+            CollectibleBubble bubble = collider.gameObject.GetComponent<CollectibleBubble>();
+            if (bubble)
+            {
+                Debug.Log("Colliding with bubble");
+                CollectBubble(bubble.bubbleSize);
+            }
+        }
     }
 }
