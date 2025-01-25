@@ -395,7 +395,7 @@ MonoBehaviour:
   size: 2
   sizeLossOnHit: 1
   obstacleTagName: Obstacle
-  bubbleTagName: Bubble
+  bubbleTagName: BubblePickup
 --- !u!1 &1201782474
 GameObject:
   m_ObjectHideFlags: 0
