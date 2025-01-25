@@ -22,7 +22,7 @@ public class SpawnFromOffScreen : MonoBehaviour
     float padding;
     float leftCameraBound, rightCameraBound, upperCameraBound, downCameraBound;
 
-    void Awake()
+    void Start()
     {   
         padding = 1.5f;
         getCameraBounds();
