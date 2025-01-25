@@ -166,9 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tf: {fileID: 8657655460236217139}
   body: {fileID: 6609337249155862677}
-  minSize: 0.5
-  maxSize: 1.2
-  torque: 10
+  maxAcclerationForce: 400
+  torque: 5
 --- !u!114 &3087972472837476525
 MonoBehaviour:
   m_ObjectHideFlags: 0
