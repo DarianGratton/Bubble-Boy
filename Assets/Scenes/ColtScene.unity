@@ -392,7 +392,10 @@ MonoBehaviour:
   sizeSpeedMod: 0.5
   sizeScaleMod: 1
   sizeZoomMod: 2
-  size: 1
+  size: 2
+  sizeLossOnHit: 1
+  obstacleTagName: Obstacle
+  bubbleTagName: Bubble
 --- !u!1 &1201782474
 GameObject:
   m_ObjectHideFlags: 0
