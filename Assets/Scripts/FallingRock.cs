@@ -15,7 +15,6 @@ public class FallingRock : MonoBehaviour
     void Start()
     {
         // Random acceleration in the left or right direction
-        randomAccelerationForce = 300f;
         float cameraDistanceZ = -Camera.main.transform.position.z;
         Vector3 cameraTopRightBounds = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, cameraDistanceZ));
         Vector3 cameraTopLeftBounds = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, cameraDistanceZ));
