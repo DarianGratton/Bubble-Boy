@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6609337249155862677}
   - component: {fileID: 5814717036466881330}
   - component: {fileID: 8881510278450501433}
+  - component: {fileID: 3087972472837476525}
   m_Layer: 0
   m_Name: FallingRock
   m_TagString: Untagged
@@ -168,3 +169,20 @@ MonoBehaviour:
   minSize: 0.5
   maxSize: 1.2
   torque: 10
+--- !u!114 &3087972472837476525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199362265423141486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4939d7e31eea04892871c0fbc8f9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tf: {fileID: 8657655460236217139}
+  body: {fileID: 6609337249155862677}
+  minScale: 0.5
+  maxScale: 1.2
+  changeMass: 1

@@ -8,23 +8,12 @@ public class FallingRock : MonoBehaviour
     public Rigidbody body;
 
     [Header("Configurations")]
-    public float minSize;
-    public float maxSize;
     public float torque;
-
-    private float randomAccelerationForce;
+    private float randomAccelerationForce = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Spawn with random size (Mass will change depending on size)
-        float randomXY = Random.Range(minSize, maxSize);
-        Vector3 randomScale = new Vector3(randomXY, randomXY, randomXY);
-        tf.transform.localScale = randomScale;
-
-        // Update mass of object
-        body.mass *= randomXY;
-
         // Random acceleration in the left or right direction
         randomAccelerationForce = 300f;
         float cameraDistanceZ = -Camera.main.transform.position.z;
