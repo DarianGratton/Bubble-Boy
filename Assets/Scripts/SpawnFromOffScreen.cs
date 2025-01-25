@@ -1,3 +1,4 @@
+// using System.Numerics;
 using UnityEngine;
 
 //just attach this script to any pickup, enemy or obstacle you want to spawn above, below or to the sides off screen.
@@ -13,6 +14,10 @@ public class SpawnFromOffScreen : MonoBehaviour
     // 'l' = left of camera
     // 'r' = right of camera 
     [SerializeField] char UpDownLeftRight;
+    [SerializeField] float StartVelocityX;
+    [SerializeField] float StartVelocityY;
+    Rigidbody rb;
+
     //How far off camera to spawn?
     float padding;
     float leftCameraBound, rightCameraBound, upperCameraBound, downCameraBound;
@@ -22,8 +27,15 @@ public class SpawnFromOffScreen : MonoBehaviour
         padding = 1.5f;
         getCameraBounds();
         this.gameObject.transform.position = moveToSpawnPos();
+        InitialVelocity();
     }
-
+    void InitialVelocity(){
+        //don't add if 0
+        if(StartVelocityX == 0 && StartVelocityY == 0) return;
+        rb = GetComponent<Rigidbody>();
+        Vector3 StartVelocity = new Vector3(StartVelocityX, StartVelocityY, 0);
+        rb.AddForce(StartVelocity);
+    }
     //Returns Up, Down, Left, Right boudns of viewport and what the player can see. 
     //Camera view keeps changing in size so needs to keep being checked on spawn.
     void getCameraBounds(){
