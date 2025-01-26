@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
         Time.timeScale = 1.0f;
-        menuCanvas.enabled = false;
+        //menuCanvas.enabled = false;
     }
 
     // Update is called once per frame
