@@ -10,16 +10,23 @@ public class FollowBound : MonoBehaviour
     float cameraDistanceZ;
     float rightBound, leftBound, upperBound, lowerBound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        bottom.transform.position = GetLowerMiddle();//teleport in place
+        top.transform.position = GetUpperMiddle();
+        left.transform.position = GetLeftMiddle();
+        right.transform.position = GetRightMiddle();
+    }
+    
     void Start()
     {
         bounds = FindFirstObjectByType<GetScreenBounds>();
-        cameraDistanceZ = -Camera.main.transform.position.z;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        float cameraDistanceZ = -Camera.main.transform.position.z;
         Vector3 boundsMAX = Camera.main.ViewportToWorldPoint(new Vector3(1,1,cameraDistanceZ)); // World coord of TOP RIGHT corner
         rightBound = boundsMAX.x ;
         upperBound = boundsMAX.y ;
@@ -33,10 +40,11 @@ public class FollowBound : MonoBehaviour
     }
 
     void FollowBounds(){
-        bottom.transform.position = GetLowerMiddle();
-        top.transform.position = GetUpperMiddle();
-        left.transform.position = GetLeftMiddle();
-        right.transform.position = GetRightMiddle();
+        //bottom.transform.position = GetLowerMiddle();
+        bottom.GetComponent<Rigidbody>().MovePosition(GetLowerMiddle());
+        top.GetComponent<Rigidbody>().MovePosition(GetUpperMiddle());
+        left.GetComponent<Rigidbody>().MovePosition(GetLeftMiddle());
+        right.GetComponent<Rigidbody>().MovePosition(GetRightMiddle());
     }
 
     Vector3 GetLeftMiddle(){ 
