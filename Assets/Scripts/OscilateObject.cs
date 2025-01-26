@@ -20,7 +20,13 @@ public class OscilateObject : MonoBehaviour{
     void FixedUpdate(){
         
         time += Time.fixedDeltaTime; //time between each frame
-        if(alongXaxis) {
+        Rigidbody cameraRb = Camera.main.GetComponent<Rigidbody>();
+        if (cameraRb == null)
+            return;
+
+        startingPos.y += cameraRb.linearVelocity.y * Time.fixedDeltaTime;
+
+        if (alongXaxis) {
             float newXPos = amplitude * Mathf.Sin(time);
             float deltaX = startingPos.x + newXPos;
             Vector3 direction = new Vector3(deltaX, gameObject.transform.position.y , 0);
