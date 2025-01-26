@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,8 +10,10 @@ public class PlayerController : MonoBehaviour
     public float sizeLossOnHit;
     public string obstacleTagName;
     public string bubbleTagName;
+
     public Canvas loseScreen;
     float increaseSize;
+
 
     void Awake()
     {
@@ -78,9 +81,14 @@ public class PlayerController : MonoBehaviour
     //Helper function to correct speed once size changes
     private void UpdateSize()
     {
-        float newScale = size * sizeScaleMod;
-        transform.localScale = new Vector3(newScale, newScale, newScale);
+        float finalScale = size * sizeScaleMod;
+        transform.localScale = new Vector3(finalScale, finalScale, finalScale);
+        
+        
     }
+
+
+    
 
     //Helper function to correct speed once size changes
     private void UpdateSpeed()
@@ -95,13 +103,16 @@ public class PlayerController : MonoBehaviour
         if (rbCam)
             rbCam.linearVelocity = new Vector3(rbCam.linearVelocity.x, size * sizeSpeedMod, rbCam.linearVelocity.z);
     }
-    
+
+ 
     //Helper function to correct camera zoom once size changes
     private void UpdateZoom()
     {
         Vector3 camPos = Camera.main.transform.position;
         Camera.main.transform.position = new Vector3(camPos.x, camPos.y, -size * sizeZoomMod - 0.5f);
     }
+
+
 
     private void OnTriggerEnter(Collider collider)
     {
