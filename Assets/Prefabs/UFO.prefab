@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.05368, y: 1.0321188, z: -2.026194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -141,7 +141,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &2368672408760745195
 MonoBehaviour:
@@ -173,9 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 8696507923222920497, guid: 50aa97039ec4ac841b30cc682e367d5b, type: 3}
-  targetTransform: {fileID: 0}
   fireRate: 3
-  projectileSpeed: 200
+  projectileSpeed: 50
   maxNumberOfProjectiles: 3
 --- !u!114 &-5984635709548520591
 MonoBehaviour:
