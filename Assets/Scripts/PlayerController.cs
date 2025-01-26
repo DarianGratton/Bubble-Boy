@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -64,11 +65,12 @@ public class PlayerController : MonoBehaviour
     //ADD CODE HERE WHEN THE PLAYER'S BUBBLE POPS
     private void LoseGame()
     {
-        loseScreen.enabled = true;
-        Time.timeScale = 0f;
+        //loseScreen.enabled = true;
+        //Time.timeScale = 0f;
 
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("LoseScene");
     }
 
     private void UpdateScore()
