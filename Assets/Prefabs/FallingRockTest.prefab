@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2013048674944906503
+--- !u!1 &6051570390532496434
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9196468787504143968}
-  - component: {fileID: 5108317861728690321}
-  - component: {fileID: 4620334512044161663}
-  - component: {fileID: 3494556501192842665}
-  - component: {fileID: 6130655294083821615}
-  - component: {fileID: 4631084042277207379}
-  - component: {fileID: 6765286520700445825}
+  - component: {fileID: 7298806227959100383}
+  - component: {fileID: 9035338509998648466}
+  - component: {fileID: 6383744792208877846}
+  - component: {fileID: 475528769272480344}
+  - component: {fileID: 609242453339662921}
+  - component: {fileID: 4676556388772038852}
+  - component: {fileID: 4557289469994806444}
+  - component: {fileID: 7927465903048618064}
   m_Layer: 0
-  m_Name: Ant
-  m_TagString: Untagged
+  m_Name: FallingRockTest
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9196468787504143968
+--- !u!4 &7298806227959100383
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013048674944906503}
+  m_GameObject: {fileID: 6051570390532496434}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.7787409, y: 1.7589488, z: -0.3029709}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5108317861728690321
+--- !u!33 &9035338509998648466
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013048674944906503}
+  m_GameObject: {fileID: 6051570390532496434}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4620334512044161663
+--- !u!23 &6383744792208877846
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013048674944906503}
+  m_GameObject: {fileID: 6051570390532496434}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -90,13 +91,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3494556501192842665
+--- !u!135 &475528769272480344
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013048674944906503}
+  m_GameObject: {fileID: 6051570390532496434}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -105,21 +106,21 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6130655294083821615
+--- !u!54 &609242453339662921
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013048674944906503}
+  m_GameObject: {fileID: 6051570390532496434}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 70
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -133,35 +134,54 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 8
   m_CollisionDetection: 0
---- !u!114 &4631084042277207379
+--- !u!114 &4676556388772038852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013048674944906503}
+  m_GameObject: {fileID: 6051570390532496434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d805d95f97c4749ace8a6d5c62b5ab, type: 3}
+  m_Script: {fileID: 11500000, guid: f27b6e2d5dac9514391ce3c384c7a420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strafeSpeed: 2
-  floatJumpSpeed: 200
---- !u!114 &6765286520700445825
+  UpDownLeftRight: 85
+--- !u!114 &4557289469994806444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013048674944906503}
+  m_GameObject: {fileID: 6051570390532496434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc4e392721b10494b809bf6f69a98c45, type: 3}
+  m_Script: {fileID: 11500000, guid: f7d5fcbe8593a4f4ab27df591389afc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 0.2
+  tf: {fileID: 7298806227959100383}
+  body: {fileID: 609242453339662921}
+  maxAcclerationForce: 400
+  torque: 5
+--- !u!114 &7927465903048618064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051570390532496434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4939d7e31eea04892871c0fbc8f9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tf: {fileID: 7298806227959100383}
+  body: {fileID: 609242453339662921}
+  minScale: 0.5
+  maxScale: 1.2
+  changeMass: 1
