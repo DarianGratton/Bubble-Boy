@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5814717036466881330}
   - component: {fileID: 8881510278450501433}
   - component: {fileID: 3087972472837476525}
-  - component: {fileID: -2660168746057973945}
+  - component: {fileID: 8333335195194874934}
   m_Layer: 0
   m_Name: Twig
   m_TagString: Obstacle
@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,8 +121,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3199362265423141486}
   serializedVersion: 4
-  m_Mass: 70
-  m_Drag: 4
+  m_Mass: 10
+  m_Drag: 100
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -171,8 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tf: {fileID: 8657655460236217139}
   body: {fileID: 6609337249155862677}
-  maxAcclerationForce: 400
-  torque: 5
+  maxAcclerationForce: 1
+  torque: 1
 --- !u!114 &3087972472837476525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,10 +187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tf: {fileID: 8657655460236217139}
   body: {fileID: 6609337249155862677}
-  minScale: 0.5
-  maxScale: 1.2
+  minScale: 0.05
+  maxScale: 0.2
   changeMass: 1
---- !u!114 &-2660168746057973945
+--- !u!114 &8333335195194874934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,4 +202,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf0751d1abfd4a45b4cb896de9d01cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 5
+  timeToLive: 10

@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 2424871258882554148}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -626,23 +626,23 @@ MonoBehaviour:
   - name: Forest
     endingPercent: 20
     bgm: {fileID: 8300000, guid: ea8cd9c1b9549874fa0576a26f9245bf, type: 3}
-    obstacles: []
+    spawnObjects: []
   - name: Mountains
     endingPercent: 40
     bgm: {fileID: 8300000, guid: 3224c6bcaf26d304daca96acc6119b14, type: 3}
-    obstacles: []
+    spawnObjects: []
   - name: Clouds
     endingPercent: 60
     bgm: {fileID: 8300000, guid: 99b23bb52c370ad4095660f9993785e7, type: 3}
-    obstacles: []
+    spawnObjects: []
   - name: Atmosphere
     endingPercent: 80
     bgm: {fileID: 8300000, guid: 5fa9c073f09d0ed4caf553909ff40aa6, type: 3}
-    obstacles: []
+    spawnObjects: []
   - name: Space
     endingPercent: 100
     bgm: {fileID: 8300000, guid: e700011b0b94c704cbe07beac91f2160, type: 3}
-    obstacles: []
+    spawnObjects: []
   musicPlayer: {fileID: 0}
   minTimeBetweenSpawns: 0.5
   maxTimeBetweenSpawns: 2
