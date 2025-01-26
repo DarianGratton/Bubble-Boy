@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2084578452081701976}
   - component: {fileID: 4303456175468586913}
   m_Layer: 0
-  m_Name: Angel
+  m_Name: UFO
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,3 +216,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad07a2a57a7b9b488618214b553a651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRandomYAccelerationForce: 0
