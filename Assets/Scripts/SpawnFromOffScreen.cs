@@ -16,6 +16,7 @@ public class SpawnFromOffScreen : MonoBehaviour
     [SerializeField] char UpDownLeftRight;
     [SerializeField] float StartVelocityX;
     [SerializeField] float StartVelocityY;
+    [SerializeField] bool leftOrRight = false;
     Rigidbody rb;
 
     //How far off camera to spawn?
@@ -26,9 +27,17 @@ public class SpawnFromOffScreen : MonoBehaviour
     {   
         padding = 1.5f;
         getCameraBounds();
+        if (leftOrRight)
+        {
+            UpDownLeftRight = (Random.Range(0f, 1f) > 0.5f) ? 'R' : 'L';
+            if (UpDownLeftRight == 'R')
+                StartVelocityX = -StartVelocityX;
+        }
+
         this.gameObject.transform.position = moveToSpawnPos();
         InitialVelocity();
     }
+
     void InitialVelocity(){
         //don't add if 0
         if(StartVelocityX == 0 && StartVelocityY == 0) return;
@@ -36,9 +45,11 @@ public class SpawnFromOffScreen : MonoBehaviour
         Vector3 StartVelocity = new Vector3(StartVelocityX, StartVelocityY, 0);
         rb.AddForce(StartVelocity);
     }
+
     //Returns Up, Down, Left, Right boudns of viewport and what the player can see. 
     //Camera view keeps changing in size so needs to keep being checked on spawn.
-    void getCameraBounds(){
+    void getCameraBounds()
+    {
         //Assuming orthographic camera then z pos of ViewportToWorldPoint doesn't matter.  cameraDistanceZ can be anything and still work.
         //If using perspective camera then z pos does matter. Assuming all gameplay takes place along X and Y axis while not moving along z axis (Z pos = 0).
         //This should work for both.
@@ -54,7 +65,8 @@ public class SpawnFromOffScreen : MonoBehaviour
         downCameraBound = boundsMIN.y - padding;
     }
 
-    Vector3 moveToSpawnPos(){
+    Vector3 moveToSpawnPos()
+    {
         //d = Down below camera 
         if(UpDownLeftRight == 'd' || UpDownLeftRight == 'D') {
             return new Vector3(getRandomXPos(), downCameraBound, 0 );
