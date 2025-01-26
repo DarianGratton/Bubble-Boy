@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bubble: {fileID: 7416061057905305185, guid: 0b3ca8774e97c43b0905d22540bc3d71, type: 3}
-  minTime: 0
-  maxTime: 0
+  minTime: 4
+  maxTime: 8
