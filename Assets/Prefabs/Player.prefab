@@ -626,23 +626,44 @@ MonoBehaviour:
   - name: Forest
     endingPercent: 20
     bgm: {fileID: 8300000, guid: ea8cd9c1b9549874fa0576a26f9245bf, type: 3}
-    spawnObjects: []
+    spawnObjects:
+    - {fileID: 3199362265423141486, guid: 5cfecba6d141c684593a4a577efb129d, type: 3}
+    - {fileID: 7001849492976900931, guid: 7e3314beec4b98c4ab450f22ebcdfda4, type: 3}
+    - {fileID: 3199362265423141486, guid: 758b520adc353184986119afd16f3855, type: 3}
   - name: Mountains
     endingPercent: 40
     bgm: {fileID: 8300000, guid: 3224c6bcaf26d304daca96acc6119b14, type: 3}
-    spawnObjects: []
+    spawnObjects:
+    - {fileID: 3199362265423141486, guid: cdae86366d865e3498d66899a3ab8d60, type: 3}
+    - {fileID: 7001849492976900931, guid: 7e3314beec4b98c4ab450f22ebcdfda4, type: 3}
+    - {fileID: 7001849492976900931, guid: fd830c643062fd34b82ffde438a60ef3, type: 3}
   - name: Clouds
     endingPercent: 60
     bgm: {fileID: 8300000, guid: 99b23bb52c370ad4095660f9993785e7, type: 3}
-    spawnObjects: []
+    spawnObjects:
+    - {fileID: 7001849492976900931, guid: 7e3314beec4b98c4ab450f22ebcdfda4, type: 3}
+    - {fileID: 7001849492976900931, guid: fd830c643062fd34b82ffde438a60ef3, type: 3}
+    - {fileID: 3199362265423141486, guid: cdae86366d865e3498d66899a3ab8d60, type: 3}
   - name: Atmosphere
     endingPercent: 80
     bgm: {fileID: 8300000, guid: 5fa9c073f09d0ed4caf553909ff40aa6, type: 3}
-    spawnObjects: []
+    spawnObjects:
+    - {fileID: 8712055242181709203, guid: e64fd13fcd02b6d47bb803bd2e966f47, type: 3}
+    - {fileID: 3199362265423141486, guid: ae535796ab0cf864892d019f8777bcb5, type: 3}
+    - {fileID: 7001849492976900931, guid: adc6ff1cd4e4ed0449d3cbc47860ba34, type: 3}
   - name: Space
     endingPercent: 100
     bgm: {fileID: 8300000, guid: e700011b0b94c704cbe07beac91f2160, type: 3}
-    spawnObjects: []
+    spawnObjects:
+    - {fileID: 8712055242181709203, guid: e64fd13fcd02b6d47bb803bd2e966f47, type: 3}
+    - {fileID: 3199362265423141486, guid: ae535796ab0cf864892d019f8777bcb5, type: 3}
+    - {fileID: 7001849492976900931, guid: adc6ff1cd4e4ed0449d3cbc47860ba34, type: 3}
+  - name: Space
+    endingPercent: 100
+    bgm: {fileID: 8300000, guid: e700011b0b94c704cbe07beac91f2160, type: 3}
+    spawnObjects:
+    - {fileID: 8712055242181709203, guid: e64fd13fcd02b6d47bb803bd2e966f47, type: 3}
+    - {fileID: 3199362265423141486, guid: ae535796ab0cf864892d019f8777bcb5, type: 3}
   musicPlayer: {fileID: 0}
   minTimeBetweenSpawns: 0.5
   maxTimeBetweenSpawns: 2
