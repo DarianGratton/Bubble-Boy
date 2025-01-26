@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float sizeLossOnHit;
     public string obstacleTagName;
     public string bubbleTagName;
+    public Canvas loseScreen;
 
     void Awake()
     {
@@ -22,9 +23,9 @@ public class PlayerController : MonoBehaviour
         UpdateScore();
 
         //USE FOR TESTING PURPOSES WHEN CHANGING SIZE IN EDITOR
-        UpdateSpeed();
-        UpdateSize();
-        UpdateZoom();
+        //UpdateSpeed();
+        //UpdateSize();
+        //UpdateZoom();
     }
 
     //When the player runs into a collectable bubble they grow and start moving faster
@@ -59,7 +60,8 @@ public class PlayerController : MonoBehaviour
     //ADD CODE HERE WHEN THE PLAYER'S BUBBLE POPS
     private void LoseGame()
     {
-        
+        loseScreen.enabled = true;
+        Time.timeScale = 0f;
     }
 
     private void UpdateScore()

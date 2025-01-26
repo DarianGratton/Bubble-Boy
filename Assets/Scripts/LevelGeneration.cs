@@ -19,6 +19,7 @@ public class LevelGeneration : MonoBehaviour
     public AudioSource musicPlayer;
     public float minTimeBetweenSpawns;
     public float maxTimeBetweenSpawns;
+    public Canvas winScreen;
 
     public float timeUntilNextSpawn;
     private int currentLayerInd;
@@ -77,7 +78,9 @@ public class LevelGeneration : MonoBehaviour
     {
         if (layerInd >= levels.Count)
         {
-            return; //TRIGGER WIN GAME
+            winScreen.enabled = true;
+            Time.timeScale = 0f;
+            return;
         }
 
         musicPlayer.clip = levels[layerInd].bgm;
