@@ -44,8 +44,6 @@ public class FollowBound : MonoBehaviour
         Vector3 boundsMIN = Camera.main.ViewportToWorldPoint(new Vector3(0,0,cameraDistanceZ)); // World coord of BOTTOM LEFT corner
         leftBound = boundsMIN.x ;
         lowerBound = boundsMIN.y ;
-        // Debug.Log(GetLowerMiddle());
-        // Debug.Log(boundsMIN);
         FollowBounds();
         // ForceInBounds();
     }
