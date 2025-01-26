@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
         //If collided object is an obstacle, take damage and shrink the bubble
         if (collider.gameObject.CompareTag(obstacleTagName))
         {
-            LoseGame();
+            TakeDamage();
         }
         else if (collider.gameObject.CompareTag(bubbleTagName))
         {

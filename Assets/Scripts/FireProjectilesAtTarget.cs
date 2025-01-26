@@ -7,7 +7,6 @@ public class FireProjectilesAtTarget : MonoBehaviour
 {
     [Header("References")]
     public GameObject projectile;
-    public Transform targetTransform;
 
     [Header("Configurations")]
     public float fireRate;
@@ -15,6 +14,7 @@ public class FireProjectilesAtTarget : MonoBehaviour
     public int maxNumberOfProjectiles = 3;
 
     private Transform actorTransform;
+    private Transform targetTransform;
     private float timeElapsed = 0.0f;
     private int projectilesFired = 0;
 
@@ -22,6 +22,7 @@ public class FireProjectilesAtTarget : MonoBehaviour
     void Start()
     {
         actorTransform = GetComponent<Transform>();
+        targetTransform = GameObject.FindGameObjectWithTag("Player").transform; // Will fail multiple game objects with player tags, I'm sorry
     }
 
     // Update is called once per frame
@@ -32,6 +33,12 @@ public class FireProjectilesAtTarget : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (targetTransform == null)
+        {
+            Debug.LogWarning("Target Transform is null");
+            return;
+        }
+
         timeElapsed += Time.deltaTime;
         if (projectilesFired < maxNumberOfProjectiles && timeElapsed > fireRate)
         {
