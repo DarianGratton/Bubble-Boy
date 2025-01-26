@@ -46,7 +46,9 @@ public class SpawnFromOffScreen : MonoBehaviour
         Vector3 StartVelocity = new Vector3(StartVelocityX, StartVelocityY, 0);
         rb.AddForce(StartVelocity);
     }
-
+    public float GetStartVelocityY(){
+        return StartVelocityY;
+    }
     //Returns Up, Down, Left, Right boudns of viewport and what the player can see. 
     //Camera view keeps changing in size so needs to keep being checked on spawn.
     void getCameraBounds()
