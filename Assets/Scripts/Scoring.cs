@@ -7,6 +7,7 @@ public class Scoring : MonoBehaviour
     public TMP_Text distanceText;
     public float totalDistanceToGo;
     public float totalUnitsToGo;
+
     private float score;
     private float remainingUnits;
     private float lastYScored;
