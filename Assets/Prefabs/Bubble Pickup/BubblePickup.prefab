@@ -128,6 +128,7 @@ MonoBehaviour:
   StartVelocityX: 0
   StartVelocityY: 20
   leftOrRight: 0
+  percentageOfSpawnBounds: 1
 --- !u!54 &6532855420709766391
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alongXaxis: 1
-  amplitude: 1
+  amplitude: 3
 --- !u!114 &321508396357981591
 MonoBehaviour:
   m_ObjectHideFlags: 0
