@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         UpdateScore();
+
+        //USE FOR TESTING PURPOSES WHEN CHANGING SIZE IN EDITOR
+        //UpdateSpeed();
+        //UpdateSize();
+        //UpdateZoom();
     }
 
     //When the player runs into a collectable bubble they grow and start moving faster

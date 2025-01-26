@@ -255,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 384,400km
+  m_text: 384400km
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -727,8 +727,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c69b89aae8e29641b460a87f67f8694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 450134739}
-  score: 0
+  distanceText: {fileID: 450134739}
+  totalDistanceToGo: 384400
+  totalUnitsToGo: 100
 --- !u!1 &1201782474
 GameObject:
   m_ObjectHideFlags: 0
