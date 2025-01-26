@@ -18,7 +18,6 @@ public class OscilateObject : MonoBehaviour{
 
     //THIS ONLY WORKS IF OSCILATION IS PERPENDICULAR to velocity
     void FixedUpdate(){
-        
         time += Time.fixedDeltaTime; //time between each frame
         Rigidbody cameraRb = Camera.main.GetComponent<Rigidbody>();
         if (cameraRb == null)
