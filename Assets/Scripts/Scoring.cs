@@ -7,6 +7,7 @@ public class Scoring : MonoBehaviour
     public TMP_Text distanceText;
     public float totalDistanceToGo;
     public float totalUnitsToGo;
+
     private float score;
     private float remainingUnits;
     private float lastYScored;
@@ -42,5 +43,11 @@ public class Scoring : MonoBehaviour
         float remainingKm = remainingUnits * unitsToKm;
 
         distanceText.text = ((int)remainingKm).ToString() + "km";
+    }
+
+    //Gets progress to reaching the moon out of 100
+    public float GetPercentProgress()
+    {
+        return (totalUnitsToGo - remainingUnits) / totalUnitsToGo * 100;
     }
 }
