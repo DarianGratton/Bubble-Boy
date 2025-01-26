@@ -19,7 +19,6 @@ public class KeyboardInput : MonoBehaviour
 
         //Left
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
-            Debug.Log("left");
             Vector3 left = new Vector3 (-strafeSpeed, 0,0);
             rb.AddForce(left);
         }
@@ -35,5 +34,8 @@ public class KeyboardInput : MonoBehaviour
             rb.AddForce(up);
         }
     }
+
+    //called from MovementHandler.cs
+    public float GetStrafeSpeed(){return strafeSpeed; }
 
 }
