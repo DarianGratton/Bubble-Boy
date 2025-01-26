@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 1148259100}
   - component: {fileID: 1148259099}
   - component: {fileID: 1148259104}
+  - component: {fileID: 1148259105}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -396,6 +397,19 @@ MonoBehaviour:
   sizeLossOnHit: 1
   obstacleTagName: Obstacle
   bubbleTagName: BubblePickup
+--- !u!114 &1148259105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148259098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c69b89aae8e29641b460a87f67f8694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &1201782474
 GameObject:
   m_ObjectHideFlags: 0
