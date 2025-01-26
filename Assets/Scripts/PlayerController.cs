@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,7 +10,10 @@ public class PlayerController : MonoBehaviour
     public float sizeLossOnHit;
     public string obstacleTagName;
     public string bubbleTagName;
+
+    public Canvas loseScreen;
     float increaseSize;
+
 
     void Awake()
     {
@@ -23,9 +27,9 @@ public class PlayerController : MonoBehaviour
         UpdateScore();
 
         //USE FOR TESTING PURPOSES WHEN CHANGING SIZE IN EDITOR
-        UpdateSpeed();
-        UpdateSize();
-        UpdateZoom();
+        //UpdateSpeed();
+        //UpdateSize();
+        //UpdateZoom();
     }
 
     //When the player runs into a collectable bubble they grow and start moving faster
@@ -60,7 +64,11 @@ public class PlayerController : MonoBehaviour
     //ADD CODE HERE WHEN THE PLAYER'S BUBBLE POPS
     private void LoseGame()
     {
-        
+        loseScreen.enabled = true;
+        Time.timeScale = 0f;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void UpdateScore()
@@ -73,9 +81,14 @@ public class PlayerController : MonoBehaviour
     //Helper function to correct speed once size changes
     private void UpdateSize()
     {
-        float newScale = size * sizeScaleMod;
-        transform.localScale = new Vector3(newScale, newScale, newScale);
+        float finalScale = size * sizeScaleMod;
+        transform.localScale = new Vector3(finalScale, finalScale, finalScale);
+        
+        
     }
+
+
+    
 
     //Helper function to correct speed once size changes
     private void UpdateSpeed()
@@ -90,7 +103,8 @@ public class PlayerController : MonoBehaviour
         if (rbCam)
             rbCam.linearVelocity = new Vector3(rbCam.linearVelocity.x, size * sizeSpeedMod, rbCam.linearVelocity.z);
     }
-    
+
+ 
     //Helper function to correct camera zoom once size changes
     private void UpdateZoom()
     {
@@ -98,12 +112,14 @@ public class PlayerController : MonoBehaviour
         Camera.main.transform.position = new Vector3(camPos.x, camPos.y, -size * sizeZoomMod - 0.5f);
     }
 
+
+
     private void OnTriggerEnter(Collider collider)
     {
         //If collided object is an obstacle, take damage and shrink the bubble
         if (collider.gameObject.CompareTag(obstacleTagName))
         {
-            TakeDamage();
+            LoseGame();
         }
         else if (collider.gameObject.CompareTag(bubbleTagName))
         {

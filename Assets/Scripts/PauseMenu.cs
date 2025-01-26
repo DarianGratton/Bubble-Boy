@@ -23,12 +23,18 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0f;
         menuCanvas.enabled = true;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void OnClickResume()
     {
         Time.timeScale = 1.0f;
         menuCanvas.enabled = false;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OnClickQuit()
