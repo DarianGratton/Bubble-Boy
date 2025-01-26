@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4801833149123975359}
   - component: {fileID: 2368672408760745195}
   - component: {fileID: 436788958891616223}
+  - component: {fileID: -5984635709548520591}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Obstacle
@@ -173,3 +174,16 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   fireRate: 3
   projectileSpeed: 200
+--- !u!114 &-5984635709548520591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712055242181709203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf0751d1abfd4a45b4cb896de9d01cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 15

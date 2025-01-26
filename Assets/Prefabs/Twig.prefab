@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5814717036466881330}
   - component: {fileID: 8881510278450501433}
   - component: {fileID: 3087972472837476525}
+  - component: {fileID: -2660168746057973945}
   m_Layer: 0
   m_Name: Twig
   m_TagString: Obstacle
@@ -189,3 +190,16 @@ MonoBehaviour:
   minScale: 0.5
   maxScale: 1.2
   changeMass: 1
+--- !u!114 &-2660168746057973945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199362265423141486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf0751d1abfd4a45b4cb896de9d01cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 5
