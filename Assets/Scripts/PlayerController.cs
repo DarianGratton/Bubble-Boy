@@ -109,10 +109,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log(collider.gameObject.tag);
             CollectibleBubble bubble = collider.gameObject.GetComponent<CollectibleBubble>();
             if (bubble)
-            {
-                Debug.Log("Colliding with bubble");
                 CollectBubble(bubble.bubbleSize);
-            }
         }
     }
 }
