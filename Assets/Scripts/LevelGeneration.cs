@@ -11,7 +11,7 @@ public class LevelGeneration : MonoBehaviour
         public string name;
         public float endingPercent;
         public AudioClip bgm;
-        public List<GameObject> obstacles;
+        public List<GameObject> spawnObjects;
     }
 
     public Scoring scoring;
@@ -20,13 +20,13 @@ public class LevelGeneration : MonoBehaviour
     public float minTimeBetweenSpawns;
     public float maxTimeBetweenSpawns;
 
-    private float timeSinceLastSpawn;
+    public float timeUntilNextSpawn;
     private int currentLayerInd;
 
     void Awake()
     {
         currentLayerInd = 0;
-        timeSinceLastSpawn = 0;
+        timeUntilNextSpawn = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
     }
 
     private void Start()
@@ -54,7 +54,6 @@ public class LevelGeneration : MonoBehaviour
             float percentThreshold = levels[currentLayerInd].endingPercent;
             if (scoring.GetPercentProgress() >= percentThreshold)
             {
-
                 TriggerNextLevel(++currentLayerInd);
             }
         }
@@ -62,7 +61,16 @@ public class LevelGeneration : MonoBehaviour
 
     private void UpdateSpawningObjects()
     {
-        //CREATE OBJECTS BASED ON LEVEL
+        timeUntilNextSpawn -= Time.deltaTime;
+        
+        if (timeUntilNextSpawn <= 0 && levels[currentLayerInd].spawnObjects.Count > 0)
+        {
+            int rand = (int)(Random.Range(0, levels[currentLayerInd].spawnObjects.Count));
+
+            Instantiate(levels[currentLayerInd].spawnObjects[rand], Vector3.zero, Quaternion.identity);
+
+            timeUntilNextSpawn = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
+        }
     }
 
     private void TriggerNextLevel(int layerInd)

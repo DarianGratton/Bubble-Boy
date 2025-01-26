@@ -644,6 +644,9 @@ MonoBehaviour:
     bgm: {fileID: 8300000, guid: e700011b0b94c704cbe07beac91f2160, type: 3}
     obstacles: []
   musicPlayer: {fileID: 0}
+  minTimeBetweenSpawns: 0.5
+  maxTimeBetweenSpawns: 2
+  timeUntilNextSpawn: 0
 --- !u!1 &6674786550196606366
 GameObject:
   m_ObjectHideFlags: 0
