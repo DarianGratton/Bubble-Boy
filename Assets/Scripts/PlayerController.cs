@@ -1,4 +1,5 @@
-using System.Collections;
+// using System.Collections;
+// using System.Numerics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public Canvas loseScreen;
     float increaseSize;
-
+    int i ;
 
     void Awake()
     {
@@ -83,13 +84,8 @@ public class PlayerController : MonoBehaviour
     {
         float finalScale = size * sizeScaleMod;
         transform.localScale = new Vector3(finalScale, finalScale, finalScale);
-        
-        
+   
     }
-
-
-    
-
     //Helper function to correct speed once size changes
     private void UpdateSpeed()
     {
@@ -109,7 +105,9 @@ public class PlayerController : MonoBehaviour
     private void UpdateZoom()
     {
         Vector3 camPos = Camera.main.transform.position;
+
         Camera.main.transform.position = new Vector3(camPos.x, camPos.y, -size * sizeZoomMod - 0.5f);
+        Debug.Log(i++);
     }
 
 
