@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public string obstacleTagName;
     public string bubbleTagName;
     public Canvas loseScreen;
+    float increaseSize;
 
     void Awake()
     {
@@ -104,14 +105,16 @@ public class PlayerController : MonoBehaviour
         //If collided object is an obstacle, take damage and shrink the bubble
         if (collider.gameObject.CompareTag(obstacleTagName))
         {
-            TakeDamage();
+            LoseGame();
         }
         else if (collider.gameObject.CompareTag(bubbleTagName))
         {
-            Debug.Log(collider.gameObject.tag);
-            CollectibleBubble bubble = collider.gameObject.GetComponent<CollectibleBubble>();
-            if (bubble)
-                CollectBubble(bubble.bubbleSize);
+            increaseSize += 0.3f;
+            float finalSize = Mathf.Pow(increaseSize, 0.7f);
+
+            Debug.Log(finalSize);
+
+            CollectBubble(finalSize);
         }
     }
 }

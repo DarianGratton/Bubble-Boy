@@ -6,22 +6,32 @@ public class SpawnBubblesDirector : MonoBehaviour
     [SerializeField] GameObject Bubble;
     [SerializeField] float minTime;
     [SerializeField] float maxTime;
-    [SerializeField] 
+    PlayerController controller;
+    float currentTime;
+    float nextSpawnTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(CountdownToSpawn(1f));
+        controller = FindFirstObjectByType<PlayerController>();
     }
 
-    IEnumerator CountdownToSpawn(float time){
-        yield return new WaitForSeconds(time);
-        SpawnBubble();
+    void Update(){
+        currentTime += Time.deltaTime;
+        
+        if(currentTime > nextSpawnTime){
+            nextSpawnTime = currentTime + Random.Range(minTime, maxTime);
+            SpawnBubble();
+        }
+        
+        
     }   
     void SpawnBubble(){
+        
         GameObject newBubble = Instantiate(Bubble);
         // float
-        // newBubble.GetComponent<BubblePU>().AddSpeed();
-        StartCoroutine(CountdownToSpawn(Random.Range(minTime, maxTime)));
+        float yVelocity = controller.size;
+        newBubble.GetComponent<BubblePU>().AddSpeed(yVelocity);
+        
     }
 }
