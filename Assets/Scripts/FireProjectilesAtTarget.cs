@@ -7,6 +7,8 @@ public class FireProjectilesAtTarget : MonoBehaviour
     [Header("References")]
     public GameObject projectile;
     public Transform targetTransform;
+
+    [Header("Configurations")]
     public float fireRate;
     public float projectileSpeed;
 
