@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2368672408760745195}
   - component: {fileID: 436788958891616223}
   - component: {fileID: -5984635709548520591}
+  - component: {fileID: 2084578452081701976}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Obstacle
@@ -154,10 +155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpDownLeftRight: 117
-  StartVelocityX: 40
+  StartVelocityX: 500
   StartVelocityY: 0
   leftOrRight: 1
-  percentageOfSpawnBounds: 0.9
+  percentageOfSpawnBounds: 0.7
 --- !u!114 &436788958891616223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +175,7 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   fireRate: 3
   projectileSpeed: 200
+  maxNumberOfProjectiles: 3
 --- !u!114 &-5984635709548520591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,3 +189,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 15
+--- !u!114 &2084578452081701976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712055242181709203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396b9aa0d86bf754db904c1cec6aee61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tf: {fileID: 3163227311706126364}
+  rb: {fileID: 4801833149123975359}
