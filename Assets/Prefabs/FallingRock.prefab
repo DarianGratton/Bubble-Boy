@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4939d7e31eea04892871c0fbc8f9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tf: {fileID: 8657655460236217139}
   body: {fileID: 6609337249155862677}
   minScale: 0.1
   maxScale: 0.5
@@ -157,6 +156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8657655460236217139}
     m_Modifications:
+    - target: {fileID: 1771894425019712033, guid: d83eee83abdc4ff4aad7843a49569d53, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5358b71e96844e46bdc67d5b60316f4, type: 2}
     - target: {fileID: 6128562134231590350, guid: d83eee83abdc4ff4aad7843a49569d53, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.054466102
