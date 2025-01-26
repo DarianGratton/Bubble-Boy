@@ -26,7 +26,6 @@ public class FallingRock : MonoBehaviour
             randomAccelerationForce = Random.Range(-maxAcclerationForce, 0);
         else 
             randomAccelerationForce = Random.Range(-maxAcclerationForce, maxAcclerationForce);
-        Debug.Log(randomAccelerationForce);
     }
 
     // Update is called once per frame

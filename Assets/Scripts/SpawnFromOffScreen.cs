@@ -17,6 +17,7 @@ public class SpawnFromOffScreen : MonoBehaviour
     [SerializeField] float StartVelocityX;
     [SerializeField] float StartVelocityY;
     [SerializeField] bool leftOrRight = false;
+    [SerializeField, Range(0.1f, 1f)] float percentageOfSpawnBounds = 1.0f;
     Rigidbody rb;
 
     //How far off camera to spawn?
@@ -71,22 +72,22 @@ public class SpawnFromOffScreen : MonoBehaviour
     {
         //d = Down below camera 
         if(UpDownLeftRight == 'd' || UpDownLeftRight == 'D') {
-            return new Vector3(getRandomXPos(), downCameraBound, 0 );
+            return new Vector3(getRandomXPos() * percentageOfSpawnBounds, downCameraBound, 0 );
         } 
         
         //l = Left of camera
         else if (UpDownLeftRight == 'l' || UpDownLeftRight == 'L') {
-            return new Vector3(leftCameraBound, getRandomYPos(), 0 );
+            return new Vector3(leftCameraBound, getRandomYPos() * percentageOfSpawnBounds, 0 );
         }
 
         //r = right of camera
         else if (UpDownLeftRight == 'r' || UpDownLeftRight == 'R') {
-            return new Vector3(rightCameraBound, getRandomYPos(), 0 );
+            return new Vector3(rightCameraBound, getRandomYPos() * percentageOfSpawnBounds, 0 );
         }
 
         //u = Up Above camera. default
         else {
-            return new Vector3(getRandomXPos(), upperCameraBound, 0 );
+            return new Vector3(getRandomXPos() * percentageOfSpawnBounds, upperCameraBound, 0 );
         }
     }
 
