@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class LevelGeneration : MonoBehaviour
 {
@@ -78,11 +79,12 @@ public class LevelGeneration : MonoBehaviour
     {
         if (layerInd >= levels.Count)
         {
-            winScreen.enabled = true;
-            Time.timeScale = 0f;
+            //winScreen.enabled = true;
+            //Time.timeScale = 0f;
 
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("WinScene");
             return;
         }
 
