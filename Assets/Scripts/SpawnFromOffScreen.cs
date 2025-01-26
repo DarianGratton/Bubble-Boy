@@ -35,8 +35,7 @@ public class SpawnFromOffScreen : MonoBehaviour
             StartVelocityX = -StartVelocityX;
 
         Vector3 vec = moveToSpawnPos();
-        this.gameObject.transform.position = vec;
-        Debug.Log(vec.ToString());
+        gameObject.GetComponent<Transform>().position = vec;
         InitialVelocity();
     }
 
@@ -77,25 +76,25 @@ public class SpawnFromOffScreen : MonoBehaviour
         //d = Down below camera 
         if (UpDownLeftRight == 'd' || UpDownLeftRight == 'D')
         {
-            return new Vector3(getRandomXPos() * percentageOfSpawnBounds, downCameraBound - padding, 0);
+            return new Vector3(getRandomXPos(), downCameraBound - padding, 0);
         }
 
         //l = Left of camera
         else if (UpDownLeftRight == 'l' || UpDownLeftRight == 'L')
         {
-            return new Vector3(leftCameraBound - padding, getRandomYPos() * percentageOfSpawnBounds, 0);
+            return new Vector3(leftCameraBound - padding, getRandomYPos(), 0);
         }
 
         //r = right of camera
         else if (UpDownLeftRight == 'r' || UpDownLeftRight == 'R')
         {
-            return new Vector3(rightCameraBound + padding, getRandomYPos() * percentageOfSpawnBounds, 0);
+            return new Vector3(rightCameraBound + padding, getRandomYPos(), 0);
         }
 
         //u = Up Above camera. default
         else
         {
-            return new Vector3(getRandomXPos() * percentageOfSpawnBounds, upperCameraBound + padding, 0);
+            return new Vector3(getRandomXPos(), upperCameraBound + padding, 0);
         }
     }
 

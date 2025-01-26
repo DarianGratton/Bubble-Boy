@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5763633038017014940}
   - component: {fileID: 165623261611604223}
   - component: {fileID: 6780121967607222692}
-  - component: {fileID: 7212073920603029413}
   - component: {fileID: 7137176313116615387}
   - component: {fileID: 6727194292044465682}
   - component: {fileID: 4909964578888700895}
+  - component: {fileID: 486122271932694736}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Obstacle
@@ -142,20 +142,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
---- !u!114 &7212073920603029413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7001849492976900931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7a92dde302014743a575977a3f47325, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alongXaxis: 0
-  amplitude: 0.1
 --- !u!114 &7137176313116615387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +171,7 @@ MonoBehaviour:
   UpDownLeftRight: 76
   StartVelocityX: 20
   StartVelocityY: 0
-  leftOrRight: 1
+  leftOrRight: 0
   percentageOfSpawnBounds: 0.5
 --- !u!114 &4909964578888700895
 MonoBehaviour:
@@ -200,3 +186,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 15
+--- !u!114 &486122271932694736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001849492976900931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a92dde302014743a575977a3f47325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alongXaxis: 0
+  amplitude: 0.1

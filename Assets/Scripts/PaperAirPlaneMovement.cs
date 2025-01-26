@@ -5,8 +5,8 @@ public class PaperAirPlaneMovement : MonoBehaviour
     [Header("Configuration")]
     public float timeGliding = 2.0f;
     public float timeDescending = 2.0f;
-    private float descendingAcceleration = 1.0f;
-    private float ascendingAcceleration = 0.2f;
+    public float descendingAcceleration = 0.1f;
+    public float ascendingAcceleration = 0.2f;
 
     private Rigidbody rb;
     private float timeElapsed = 0.0f;
@@ -32,14 +32,14 @@ public class PaperAirPlaneMovement : MonoBehaviour
         timeElapsed += Time.deltaTime;
         if (isGliding && timeElapsed > timeGliding)
         {
-            acceleration = -descendingAcceleration;
+            acceleration = descendingAcceleration;
             isGliding = false;
             timeElapsed = 0.0f;
         }
         else if (!isGliding && timeElapsed > timeDescending)
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0);
-            acceleration = ascendingAcceleration;
+            acceleration = -ascendingAcceleration;
             isGliding = true;
             timeElapsed = 0.0f;
         }
