@@ -63,6 +63,9 @@ public class PlayerController : MonoBehaviour
     {
         loseScreen.enabled = true;
         Time.timeScale = 0f;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void UpdateScore()

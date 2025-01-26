@@ -80,6 +80,9 @@ public class LevelGeneration : MonoBehaviour
         {
             winScreen.enabled = true;
             Time.timeScale = 0f;
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             return;
         }
 
