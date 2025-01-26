@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Transform playerModelTransform;
     public float sizeSpeedMod;
     public float sizeScaleMod;
     public float sizeZoomMod;
@@ -22,9 +23,9 @@ public class PlayerController : MonoBehaviour
         UpdateScore();
 
         //USE FOR TESTING PURPOSES WHEN CHANGING SIZE IN EDITOR
-        //UpdateSpeed();
-        //UpdateSize();
-        //UpdateZoom();
+        UpdateSpeed();
+        UpdateSize();
+        UpdateZoom();
     }
 
     //When the player runs into a collectable bubble they grow and start moving faster
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateSize()
     {
         float newScale = size * sizeScaleMod;
-        transform.localScale = new Vector3(newScale, newScale, newScale);
+        playerModelTransform.localScale = new Vector3(newScale, newScale, newScale);
     }
 
     //Helper function to correct speed once size changes
@@ -94,7 +95,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateZoom()
     {
         Vector3 camPos = Camera.main.transform.position;
-        Camera.main.transform.position = new Vector3(camPos.x, camPos.y, -size * sizeZoomMod);
+        Camera.main.transform.position = new Vector3(camPos.x, camPos.y, -size * sizeZoomMod - 0.5f);
     }
 
     private void OnTriggerEnter(Collider collider)
