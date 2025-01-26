@@ -4,7 +4,6 @@ public class RandomScale : MonoBehaviour
 {
 
     [Header("References")]
-    public Transform tf;
     public Rigidbody body;
 
     [Header("Configurations")]
@@ -18,7 +17,7 @@ public class RandomScale : MonoBehaviour
         // Spawn with random size (Mass will change depending on size)
         float randomXY = Random.Range(minScale, maxScale);
         Vector3 randomScale = new Vector3(randomXY, randomXY, randomXY);
-        tf.transform.localScale = randomScale;
+        gameObject.transform.localScale = randomScale;
 
         // Update mass of object
         if (changeMass && body != null)
