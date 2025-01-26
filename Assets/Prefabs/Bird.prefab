@@ -185,3 +185,4 @@ MonoBehaviour:
   StartVelocityX: 50
   StartVelocityY: 0
   leftOrRight: 1
+  percentageOfSpawnBounds: 0.9
