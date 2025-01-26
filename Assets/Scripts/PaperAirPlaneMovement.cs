@@ -9,18 +9,16 @@ public class PaperAirPlaneMovement : MonoBehaviour
     private float ascendingAcceleration = 0.2f;
 
     private Rigidbody rb;
-    private Rigidbody cameraRb;
     private float timeElapsed = 0.0f;
     private bool isGliding = true;
     private float acceleration = 0.0f;
-    private Vector3 startingPos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        cameraRb = Camera.main.GetComponent<Rigidbody>();
-        startingPos = gameObject.transform.position;
+        if (gameObject.transform.localPosition.y < 0) // Ensures the plane always spawns on the top half of the screen
+            gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, -gameObject.transform.localPosition.y); 
     }
 
     // Update is called once per frame
