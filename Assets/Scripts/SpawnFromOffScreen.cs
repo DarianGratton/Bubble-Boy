@@ -48,6 +48,7 @@ public class SpawnFromOffScreen : MonoBehaviour
         Vector3 StartVelocity = new Vector3(StartVelocityX, StartVelocityY, 0);
         rb.AddForce(StartVelocity);
     }
+
     public float GetStartVelocityY()
     {
         return StartVelocityY;

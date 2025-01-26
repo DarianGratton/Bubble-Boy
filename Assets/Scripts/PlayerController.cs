@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform playerModelTransform;
     public float sizeSpeedMod;
     public float sizeScaleMod;
     public float sizeZoomMod;
@@ -74,7 +73,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateSize()
     {
         float newScale = size * sizeScaleMod;
-        playerModelTransform.localScale = new Vector3(newScale, newScale, newScale);
+        transform.localScale = new Vector3(newScale, newScale, newScale);
     }
 
     //Helper function to correct speed once size changes
