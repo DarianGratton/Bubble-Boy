@@ -50,6 +50,7 @@ public class FireProjectilesAtTarget : MonoBehaviour
 
     private void SpawnProjectile()
     {
+        targetTransform = GameObject.FindGameObjectWithTag("Player").transform; // Will fail multiple game objects with player tags, I'm sorry
         GameObject newProjectile = Instantiate(projectile, actorTransform.position, actorTransform.rotation);
         Rigidbody newProjectileBody = newProjectile.GetComponent<Rigidbody>();
         if (newProjectileBody == null)
