@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpDownLeftRight: 76
-  StartVelocityX: 20
+  StartVelocityX: 30
   StartVelocityY: 0
   leftOrRight: 1
   percentageOfSpawnBounds: 0.7
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa2914a2b326d34d8be83871fd12625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeGliding: 3
+  timeGliding: 5
   timeDescending: 2
   descendingAcceleration: 0.1
   ascendingAcceleration: 0.2

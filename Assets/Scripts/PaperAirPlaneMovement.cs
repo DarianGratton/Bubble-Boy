@@ -16,9 +16,18 @@ public class PaperAirPlaneMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        float cameraDistanceZ = -Camera.main.transform.position.z;
+        Vector3 boundsMAX = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, cameraDistanceZ)); // World coord of TOP RIGHT corner
+        Vector3 boundsMIN = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, cameraDistanceZ)); // World coord of BOTTOM LEFT corner
+        float upperCameraBound = boundsMAX.y;
+        float downCameraBound = boundsMIN.y;
+
+        float middleYCameraBound = (upperCameraBound - downCameraBound) / 2; 
+        float spawnPosition = (upperCameraBound - gameObject.transform.position.y) / 2;
+        if (spawnPosition < middleYCameraBound) // Ensures the plane always spawns on the top half of the screen (it doesn't work but whatever)
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + middleYCameraBound);
+
         rb = gameObject.GetComponent<Rigidbody>();
-        if (gameObject.transform.localPosition.y < 0) // Ensures the plane always spawns on the top half of the screen
-            gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, -gameObject.transform.localPosition.y); 
     }
 
     // Update is called once per frame
