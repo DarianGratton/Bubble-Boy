@@ -15,6 +15,14 @@ public class FollowBound : MonoBehaviour
 
     [SerializeField] Rigidbody player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        bottom.transform.position = GetLowerMiddle();//teleport in place
+        top.transform.position = GetUpperMiddle();
+        left.transform.position = GetLeftMiddle();
+        right.transform.position = GetRightMiddle();
+    }
+    
     
     void Start()
     {
