@@ -11,11 +11,11 @@ public class BubblePU : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, newY * speedMagnitude,0);
     }
     private void OnTriggerEnter(Collider other) {
-        StartCoroutine(Pop());
+        if(other.gameObject.tag != "BubblePickup") StartCoroutine(Pop());
     }
 
     IEnumerator Pop(){
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }
 }

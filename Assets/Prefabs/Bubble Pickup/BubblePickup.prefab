@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 321508396357981591}
   m_Layer: 0
   m_Name: BubblePickup
-  m_TagString: Untagged
+  m_TagString: BubblePickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alongXaxis: 1
-  amplitude: 3
+  amplitude: 1.8
 --- !u!114 &321508396357981591
 MonoBehaviour:
   m_ObjectHideFlags: 0
