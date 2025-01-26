@@ -40,7 +40,8 @@ public class SpawnFromOffScreen : MonoBehaviour
         Transform tf = gameObject.GetComponent<Transform>();
         if (UpDownLeftRight == 'l' || UpDownLeftRight == 'L')
         {
-            gameObject.GetComponent<Transform>().rotation = new Quaternion(tf.rotation.x, tf.rotation.y + 180f, tf.rotation.z, 1);
+            Vector3 rotationVector = new Vector3(0, tf.rotation.y + 180f, 0);
+            gameObject.GetComponent<Transform>().rotation = Quaternion.Euler(rotationVector);
         }
 
         Vector3 vec = moveToSpawnPos();
