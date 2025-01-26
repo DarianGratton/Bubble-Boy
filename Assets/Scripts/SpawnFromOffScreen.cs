@@ -1,4 +1,5 @@
 // using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 //just attach this script to any pickup, enemy or obstacle you want to spawn above, below or to the sides off screen.
@@ -32,10 +33,19 @@ public class SpawnFromOffScreen : MonoBehaviour
             UpDownLeftRight = (Random.Range(0f, 1f) > 0.5f) ? 'R' : 'L';
 
         if (UpDownLeftRight == 'r' || UpDownLeftRight == 'R')
+        {
             StartVelocityX = -StartVelocityX;
+        }
+
+        Transform tf = gameObject.GetComponent<Transform>();
+        if (UpDownLeftRight == 'l' || UpDownLeftRight == 'L')
+        {
+            Vector3 rotationVector = new Vector3(0, tf.rotation.y + 180f, 0);
+            gameObject.GetComponent<Transform>().rotation = Quaternion.Euler(rotationVector);
+        }
 
         Vector3 vec = moveToSpawnPos();
-        gameObject.GetComponent<Transform>().position = vec;
+        tf.position = vec;
         InitialVelocity();
     }
 
