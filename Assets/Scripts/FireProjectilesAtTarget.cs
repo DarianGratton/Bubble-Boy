@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices.WindowsRuntime;
 using JetBrains.Rider.Unity.Editor;
+using UnityEditor;
 using UnityEngine;
 
 public class FireProjectilesAtTarget : MonoBehaviour
@@ -11,9 +12,11 @@ public class FireProjectilesAtTarget : MonoBehaviour
     [Header("Configurations")]
     public float fireRate;
     public float projectileSpeed;
+    public int maxNumberOfProjectiles = 3;
 
     private Transform actorTransform;
     private float timeElapsed = 0.0f;
+    private int projectilesFired = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,10 +33,11 @@ public class FireProjectilesAtTarget : MonoBehaviour
     private void FixedUpdate()
     {
         timeElapsed += Time.deltaTime;
-        if (timeElapsed > fireRate)
+        if (projectilesFired < maxNumberOfProjectiles && timeElapsed > fireRate)
         {
             SpawnProjectile();
             timeElapsed = 0.0f;
+            projectilesFired++;
         }
     }
 
