@@ -7,6 +7,7 @@ public class FollowBound : MonoBehaviour
     [SerializeField] GameObject top;
     [SerializeField] GameObject left;
     [SerializeField] GameObject right;
+    float offsetBounds = 0.5f;
     float cameraDistanceZ;
     float rightBound, leftBound, upperBound, lowerBound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,25 +42,25 @@ public class FollowBound : MonoBehaviour
 
     Vector3 GetLeftMiddle(){ 
         float midY = Camera.main.transform.position.y;
-        Vector3 LeftMid = new Vector3(leftBound, midY, 0);
+        Vector3 LeftMid = new Vector3(leftBound - offsetBounds, midY, 0);
         return LeftMid;
     }
 
     Vector3 GetRightMiddle(){ 
         float midY = Camera.main.transform.position.y;
-        Vector3 RightMid = new Vector3(rightBound, midY, 0);
+        Vector3 RightMid = new Vector3(rightBound + offsetBounds, midY, 0);
         return RightMid;
     }
 
     Vector3 GetLowerMiddle(){ 
         float midX = Camera.main.transform.position.x;
-        Vector3 LowMid = new Vector3(midX, lowerBound, 0);
+        Vector3 LowMid = new Vector3(midX, lowerBound - offsetBounds, 0);
         return LowMid;
     }
 
     Vector3 GetUpperMiddle(){ 
         float midX = Camera.main.transform.position.x;
-        Vector3 LowMid = new Vector3(midX, upperBound, 0);
+        Vector3 LowMid = new Vector3(midX, upperBound + offsetBounds, 0);
         return LowMid;
     }
 }
