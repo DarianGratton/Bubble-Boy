@@ -19,13 +19,20 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        UpdateScore();
+
+        //USE FOR TESTING PURPOSES WHEN CHANGING SIZE IN EDITOR
+        //UpdateSpeed();
+        //UpdateSize();
+        //UpdateZoom();
     }
 
     //When the player runs into a collectable bubble they grow and start moving faster
     private void CollectBubble(float bubbleSize)
     {
-        Debug.Log("Collecting Bubble");
+        //Update score for previous segment before size changed
+        UpdateScore();
+
         size += bubbleSize;
         UpdateSpeed();
         UpdateSize();
@@ -35,8 +42,12 @@ public class PlayerController : MonoBehaviour
     //When getting hit, the player loses size and speed
     private void TakeDamage()
     {
+        //Update score for previous segment before size changed
+        UpdateScore();
+
         size -= sizeLossOnHit;
 
+        //Pop/lose game if too small
         if (size < 1)
             LoseGame();
 
@@ -49,6 +60,13 @@ public class PlayerController : MonoBehaviour
     private void LoseGame()
     {
         
+    }
+
+    private void UpdateScore()
+    {
+        Scoring scoreTracker = GetComponent<Scoring>();
+        if (scoreTracker)
+            scoreTracker.UpdateScoreBasedOnSize(size);
     }
 
     //Helper function to correct speed once size changes
@@ -84,7 +102,6 @@ public class PlayerController : MonoBehaviour
         //If collided object is an obstacle, take damage and shrink the bubble
         if (collider.gameObject.CompareTag(obstacleTagName))
         {
-            Debug.Log("Not bubble");
             TakeDamage();
         }
         else if (collider.gameObject.CompareTag(bubbleTagName))
