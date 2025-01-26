@@ -472,7 +472,6 @@ GameObject:
   - component: {fileID: 4735512062494172534}
   - component: {fileID: 8146986143946034384}
   - component: {fileID: 1641073229714134316}
-  - component: {fileID: 7529453004422973267}
   - component: {fileID: -6911682469760481818}
   - component: {fileID: -3913726615958663761}
   m_Layer: 7
@@ -579,26 +578,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &7529453004422973267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6187529980423333889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aa62028e77555b44847ae2cf9346ad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerModelTransform: {fileID: 0}
-  sizeSpeedMod: 0.5
-  sizeScaleMod: 1
-  sizeZoomMod: 4
-  size: 2
-  sizeLossOnHit: 1
-  obstacleTagName: Obstacle
-  bubbleTagName: BubblePickup
 --- !u!114 &-6911682469760481818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,10 +801,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2013048674944906503, guid: 755c9509404d64d4cb6ff0f61cb621ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6548608971423308934}
   m_SourcePrefab: {fileID: 100100000, guid: 755c9509404d64d4cb6ff0f61cb621ed, type: 3}
 --- !u!4 &3186366555341604195 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9196468787504143968, guid: 755c9509404d64d4cb6ff0f61cb621ed, type: 3}
   m_PrefabInstance: {fileID: 6023657809176206083}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5221815768531725828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2013048674944906503, guid: 755c9509404d64d4cb6ff0f61cb621ed, type: 3}
+  m_PrefabInstance: {fileID: 6023657809176206083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6548608971423308934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221815768531725828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa62028e77555b44847ae2cf9346ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeSpeedMod: 0.5
+  sizeScaleMod: 1
+  sizeZoomMod: 4
+  size: 2
+  sizeLossOnHit: 1
+  obstacleTagName: Obstacle
+  bubbleTagName: BubblePickup
