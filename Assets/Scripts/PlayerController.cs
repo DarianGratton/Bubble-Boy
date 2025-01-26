@@ -80,9 +80,9 @@ public class PlayerController : MonoBehaviour
     private void UpdateSpeed()
     {
         //Update player velocity THIS WILL BE BAD ONCE WE HAVE OTHER Y AXIS FORCES, CHANGE LATER
-        Rigidbody rbP = GetComponent<Rigidbody>();
-        if (rbP)
-            rbP.linearVelocity = new Vector3(rbP.linearVelocity.x, size * sizeSpeedMod, rbP.linearVelocity.z);
+        //Rigidbody rbP = GetComponent<Rigidbody>();
+        //if (rbP)
+        //    rbP.linearVelocity = new Vector3(rbP.linearVelocity.x, size * sizeSpeedMod, rbP.linearVelocity.z);
 
         //Update camera velocity
         Rigidbody rbCam = Camera.main.GetComponent<Rigidbody>();
