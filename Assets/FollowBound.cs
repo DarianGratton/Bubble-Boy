@@ -27,6 +27,8 @@ public class FollowBound : MonoBehaviour
         rbRight = right.GetComponent<Rigidbody>();
         StartCoroutine(WaitToEnable());
         //Stop player from flying off at runtime
+        Collider sphere = player.gameObject.GetComponent<SphereCollider>();
+        sphere.enabled = false;
         player.constraints = RigidbodyConstraints.FreezePosition;
         StartCoroutine(UnlockPlayer());
     }
@@ -62,7 +64,8 @@ public class FollowBound : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         player.constraints = RigidbodyConstraints.None;
         player.constraints = RigidbodyConstraints.FreezePositionZ;
-
+        Collider sphere = player.gameObject.GetComponent<SphereCollider>();
+        sphere.enabled = true;
     }
 
     //Stop teleporting bounds bug that knocks ball off at runtime.
