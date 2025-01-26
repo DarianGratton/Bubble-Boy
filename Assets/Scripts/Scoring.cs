@@ -43,4 +43,10 @@ public class Scoring : MonoBehaviour
 
         distanceText.text = ((int)remainingKm).ToString() + "km";
     }
+
+    //Gets progress to reaching the moon out of 100
+    public float GetPercentProgress()
+    {
+        return remainingUnits / totalUnitsToGo;
+    }
 }

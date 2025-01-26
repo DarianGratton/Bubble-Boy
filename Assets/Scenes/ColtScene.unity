@@ -1555,6 +1555,7 @@ GameObject:
   - component: {fileID: 1148259104}
   - component: {fileID: 1148259105}
   - component: {fileID: 1148259106}
+  - component: {fileID: 1148259107}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1690,6 +1691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa62028e77555b44847ae2cf9346ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerModelTransform: {fileID: 0}
   sizeSpeedMod: 0.5
   sizeScaleMod: 1
   sizeZoomMod: 2
@@ -1725,6 +1727,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuCanvas: {fileID: 1197881775}
+--- !u!114 &1148259107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148259098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0521de21c4f2af4c8e589bc19cf095b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1197881772
 GameObject:
   m_ObjectHideFlags: 0
