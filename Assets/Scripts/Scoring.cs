@@ -47,6 +47,6 @@ public class Scoring : MonoBehaviour
     //Gets progress to reaching the moon out of 100
     public float GetPercentProgress()
     {
-        return remainingUnits / totalUnitsToGo;
+        return (totalUnitsToGo - remainingUnits) / totalUnitsToGo * 100;
     }
 }

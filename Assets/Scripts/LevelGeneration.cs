@@ -10,17 +10,29 @@ public class LevelGeneration : MonoBehaviour
     {
         public string name;
         public float endingPercent;
-        //music
+        public AudioClip bgm;
         //list of obstacles
     }
 
     public Scoring scoring;
     public List<LevelLayer> levels;
+    public AudioSource musicPlayer;
+
     private int currentLayerInd;
 
     void Awake()
     {
         currentLayerInd = 0;
+    }
+
+    private void Start()
+    {
+        //Set the starting music
+        if (levels.Count > 0)
+        {
+            musicPlayer.clip = levels[0].bgm;
+            musicPlayer.Play();
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +43,7 @@ public class LevelGeneration : MonoBehaviour
             float percentThreshold = levels[currentLayerInd].endingPercent;
             if (scoring.GetPercentProgress() >= percentThreshold)
             {
+
                 TriggerNextLevel(++currentLayerInd);
             }
         }
@@ -43,7 +56,8 @@ public class LevelGeneration : MonoBehaviour
             return; //TRIGGER WIN GAME
         }
 
-        //change music
+        musicPlayer.clip = levels[layerInd].bgm;
+        musicPlayer.Play();
         Debug.Log("Entering " + levels[layerInd].name);
     }
 
