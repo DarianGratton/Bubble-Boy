@@ -16,8 +16,7 @@ public class MainMenu : MonoBehaviour
     }
     public void OnClickPlay()
     {
-        Debug.Log("Hello");
-        SceneManager.LoadScene("ColtScene");
+        SceneManager.LoadScene("Main");
     }
 
     public void OnClickQuit()
