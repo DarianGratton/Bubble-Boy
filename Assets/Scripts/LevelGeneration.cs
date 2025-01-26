@@ -11,18 +11,22 @@ public class LevelGeneration : MonoBehaviour
         public string name;
         public float endingPercent;
         public AudioClip bgm;
-        //list of obstacles
+        public List<GameObject> obstacles;
     }
 
     public Scoring scoring;
     public List<LevelLayer> levels;
     public AudioSource musicPlayer;
+    public float minTimeBetweenSpawns;
+    public float maxTimeBetweenSpawns;
 
+    private float timeSinceLastSpawn;
     private int currentLayerInd;
 
     void Awake()
     {
         currentLayerInd = 0;
+        timeSinceLastSpawn = 0;
     }
 
     private void Start()
@@ -38,6 +42,13 @@ public class LevelGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckForLevelTransition();
+
+        UpdateSpawningObjects();
+    }
+
+    private void CheckForLevelTransition()
+    {
         if (currentLayerInd < levels.Count)
         {
             float percentThreshold = levels[currentLayerInd].endingPercent;
@@ -47,6 +58,11 @@ public class LevelGeneration : MonoBehaviour
                 TriggerNextLevel(++currentLayerInd);
             }
         }
+    }
+
+    private void UpdateSpawningObjects()
+    {
+        //CREATE OBJECTS BASED ON LEVEL
     }
 
     private void TriggerNextLevel(int layerInd)
