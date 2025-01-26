@@ -32,6 +32,12 @@ public class FireProjectilesAtTarget : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (targetTransform == null)
+        {
+            Debug.LogWarning("Target Transform is null");
+            return;
+        }
+
         timeElapsed += Time.deltaTime;
         if (projectilesFired < maxNumberOfProjectiles && timeElapsed > fireRate)
         {
