@@ -1021,7 +1021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1431228490834585168, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: floatJumpSpeed
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1641073229714134316, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: m_CollisionDetection
