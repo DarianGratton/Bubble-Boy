@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf0751d1abfd4a45b4cb896de9d01cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 15
+  timeToLive: 100
 --- !u!114 &486122271932694736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4939d7e31eea04892871c0fbc8f9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tf: {fileID: 0}
   body: {fileID: 0}
   minScale: 0.1
   maxScale: 0.2

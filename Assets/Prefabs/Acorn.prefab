@@ -131,10 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4939d7e31eea04892871c0fbc8f9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tf: {fileID: 8657655460236217139}
   body: {fileID: 6609337249155862677}
-  minScale: 0.1
-  maxScale: 0.25
+  minScale: 0.2
+  maxScale: 0.4
   changeMass: 1
 --- !u!114 &8333335195194874934
 MonoBehaviour:
