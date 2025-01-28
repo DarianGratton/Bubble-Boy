@@ -118,7 +118,7 @@ MonoBehaviour:
   UpDownLeftRight: 76
   StartVelocityX: 20
   StartVelocityY: 0
-  leftOrRight: 0
+  leftOrRight: 1
   percentageOfSpawnBounds: 0.5
 --- !u!114 &486122271932694736
 MonoBehaviour:
