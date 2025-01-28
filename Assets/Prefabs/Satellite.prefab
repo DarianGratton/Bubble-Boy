@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6780121967607222692}
   - component: {fileID: 7137176313116615387}
   - component: {fileID: 6727194292044465682}
-  - component: {fileID: -3843726367301844403}
+  - component: {fileID: 5665210053482882856}
   m_Layer: 0
   m_Name: Satellite
   m_TagString: Obstacle
@@ -118,7 +118,7 @@ MonoBehaviour:
   StartVelocityY: 0
   leftOrRight: 1
   percentageOfSpawnBounds: 0.9
---- !u!114 &-3843726367301844403
+--- !u!114 &5665210053482882856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,10 +127,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7001849492976900931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf0751d1abfd4a45b4cb896de9d01cb, type: 3}
+  m_Script: {fileID: 11500000, guid: fa801952a200cb34eabec05ea6b24c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 100
+  timeToLive: 15
 --- !u!1001 &4799438147681923767
 PrefabInstance:
   m_ObjectHideFlags: 0

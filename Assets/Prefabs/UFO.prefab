@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4107777831335386499}
   - component: {fileID: 4801833149123975359}
   - component: {fileID: 2368672408760745195}
-  - component: {fileID: -5984635709548520591}
   - component: {fileID: 2084578452081701976}
   - component: {fileID: 4303456175468586913}
+  - component: {fileID: -6817820323552368548}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Obstacle
@@ -105,19 +105,6 @@ MonoBehaviour:
   StartVelocityY: 0
   leftOrRight: 1
   percentageOfSpawnBounds: 0.7
---- !u!114 &-5984635709548520591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8712055242181709203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf0751d1abfd4a45b4cb896de9d01cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToLive: 100
 --- !u!114 &2084578452081701976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +132,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRandomYAccelerationForce: 0
+--- !u!114 &-6817820323552368548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712055242181709203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa801952a200cb34eabec05ea6b24c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 10
 --- !u!1001 &1215737158862560758
 PrefabInstance:
   m_ObjectHideFlags: 0
