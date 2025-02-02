@@ -116,10 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpDownLeftRight: 76
-  StartVelocityX: 20
+  StartVelocityX: 30
   StartVelocityY: 0
   leftOrRight: 1
-  percentageOfSpawnBounds: 0.5
 --- !u!114 &486122271932694736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,15 +176,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3431051329715634030, guid: 443965e80f129904f9e5e1b2666a6990, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.76498216
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3431051329715634030, guid: 443965e80f129904f9e5e1b2666a6990, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.76498216
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3431051329715634030, guid: 443965e80f129904f9e5e1b2666a6990, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.76498216
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3431051329715634030, guid: 443965e80f129904f9e5e1b2666a6990, type: 3}
       propertyPath: m_LocalPosition.x

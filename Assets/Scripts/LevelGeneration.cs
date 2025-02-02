@@ -10,7 +10,7 @@ public class LevelGeneration : MonoBehaviour
     public struct LevelLayer
     {
         public string name;
-        public float endingHeight; // Now based on height
+        public float endingHeight; // Height at which this level ends
         public AudioClip bgm;
         public List<GameObject> spawnObjects;
     }
@@ -21,6 +21,10 @@ public class LevelGeneration : MonoBehaviour
     public float minTimeBetweenSpawns;
     public float maxTimeBetweenSpawns;
     public Canvas winScreen;
+
+    public Color startColor = Color.blue; // Sky starts as blue
+    public Color midColor = new Color(1f, 0.6f, 0.2f); // Sunset orange
+    public Color endColor = Color.black; // Dark/stars for space
 
     private float timeUntilNextSpawn;
     private int currentLayerInd;
@@ -39,20 +43,24 @@ public class LevelGeneration : MonoBehaviour
             musicPlayer.clip = levels[0].bgm;
             musicPlayer.Play();
         }
+
+        // Set initial sky color
+        Camera.main.backgroundColor = startColor;
     }
 
     void Update()
     {
         CheckForLevelTransition();
         UpdateSpawningObjects();
+        UpdateSkyColor(); // Dynamically update the sky color
     }
 
     private void CheckForLevelTransition()
     {
         if (currentLayerInd < levels.Count)
         {
-            float heightThreshold = levels[currentLayerInd].endingHeight; // Now based on height
-            float currentHeight = scoring.GetCurrentHeight(); // Uses actual height
+            float heightThreshold = levels[currentLayerInd].endingHeight;
+            float currentHeight = scoring.GetCurrentHeight();
 
             if (currentHeight >= heightThreshold)
             {
@@ -64,7 +72,7 @@ public class LevelGeneration : MonoBehaviour
     private void UpdateSpawningObjects()
     {
         timeUntilNextSpawn -= Time.deltaTime;
-        
+
         // Stop spawning obstacles after "Space"
         if (currentLayerInd >= levels.Count || levels[currentLayerInd].name == "Space")
         {
@@ -83,13 +91,37 @@ public class LevelGeneration : MonoBehaviour
     {
         if (layerInd >= levels.Count)
         {
-            SceneManager.LoadScene("WinScene"); // Game ends when reaching "Space"
+            SceneManager.LoadScene("WinScene");
             return;
         }
 
         musicPlayer.clip = levels[layerInd].bgm;
         musicPlayer.Play();
         Debug.Log("Entering " + levels[layerInd].name);
+    }
+
+    private void UpdateSkyColor()
+    {
+        float currentHeight = scoring.GetCurrentHeight();
+
+        if (currentHeight <= 250) // Forest to Mountains
+        {
+            Camera.main.backgroundColor = startColor;
+        }
+        else if (currentHeight <= 1050) // Mountains to Clouds
+        {
+            float t = (currentHeight - 250f) / (1050f - 250f); // Ensure 0 to 1 range
+            Camera.main.backgroundColor = Color.Lerp(startColor, midColor, t);
+        }
+        else if (currentHeight <= 1912) // Clouds to Space
+        {
+            float t = (currentHeight - 1050f) / (1912f - 1050f); // Ensure 0 to 1 range
+            Camera.main.backgroundColor = Color.Lerp(midColor, endColor, t);
+        }
+        else // Atmosphere to Space
+        {
+            Camera.main.backgroundColor = endColor;
+        }
     }
 
     public LevelLayer GetCurrentLayer()

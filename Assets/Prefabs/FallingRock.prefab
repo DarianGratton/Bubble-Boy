@@ -102,7 +102,6 @@ MonoBehaviour:
   StartVelocityX: 0
   StartVelocityY: 0
   leftOrRight: 0
-  percentageOfSpawnBounds: 0.8
 --- !u!114 &8881510278450501433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,8 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 6609337249155862677}
-  minScale: 0.1
-  maxScale: 0.5
+  minScale: 0.5
+  maxScale: 1
   changeMass: 1
 --- !u!114 &4229513799280990240
 MonoBehaviour:
