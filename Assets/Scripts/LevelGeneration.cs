@@ -10,7 +10,7 @@ public class LevelGeneration : MonoBehaviour
     public struct LevelLayer
     {
         public string name;
-        public float endingPercent;
+        public float endingHeight; // Now based on height
         public AudioClip bgm;
         public List<GameObject> spawnObjects;
     }
@@ -22,7 +22,7 @@ public class LevelGeneration : MonoBehaviour
     public float maxTimeBetweenSpawns;
     public Canvas winScreen;
 
-    public float timeUntilNextSpawn;
+    private float timeUntilNextSpawn;
     private int currentLayerInd;
 
     void Awake()
@@ -33,7 +33,7 @@ public class LevelGeneration : MonoBehaviour
 
     private void Start()
     {
-        //Set the starting music
+        // Set the starting music
         if (levels.Count > 0)
         {
             musicPlayer.clip = levels[0].bgm;
@@ -41,11 +41,9 @@ public class LevelGeneration : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckForLevelTransition();
-
         UpdateSpawningObjects();
     }
 
@@ -53,8 +51,10 @@ public class LevelGeneration : MonoBehaviour
     {
         if (currentLayerInd < levels.Count)
         {
-            float percentThreshold = levels[currentLayerInd].endingPercent;
-            if (scoring.GetPercentProgress() >= percentThreshold)
+            float heightThreshold = levels[currentLayerInd].endingHeight; // Now based on height
+            float currentHeight = scoring.GetCurrentHeight(); // Uses actual height
+
+            if (currentHeight >= heightThreshold)
             {
                 TriggerNextLevel(++currentLayerInd);
             }
@@ -65,12 +65,16 @@ public class LevelGeneration : MonoBehaviour
     {
         timeUntilNextSpawn -= Time.deltaTime;
         
+        // Stop spawning obstacles after "Space"
+        if (currentLayerInd >= levels.Count || levels[currentLayerInd].name == "Space")
+        {
+            return; // No more obstacles spawn
+        }
+
         if (timeUntilNextSpawn <= 0 && levels[currentLayerInd].spawnObjects.Count > 0)
         {
-            int rand = (int)(Random.Range(0, levels[currentLayerInd].spawnObjects.Count));
-
+            int rand = Random.Range(0, levels[currentLayerInd].spawnObjects.Count);
             Instantiate(levels[currentLayerInd].spawnObjects[rand], Vector3.zero, Quaternion.identity);
-
             timeUntilNextSpawn = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
         }
     }
@@ -79,12 +83,7 @@ public class LevelGeneration : MonoBehaviour
     {
         if (layerInd >= levels.Count)
         {
-            //winScreen.enabled = true;
-            //Time.timeScale = 0f;
-
-            //Cursor.visible = true;
-            //Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene("WinScene");
+            SceneManager.LoadScene("WinScene"); // Game ends when reaching "Space"
             return;
         }
 
