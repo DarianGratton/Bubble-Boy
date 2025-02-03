@@ -1,9 +1,14 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip popSound;
+    public int life = 3;
+    private bool isInvisble = false;
     public float sizeSpeedMod;
     public float sizeScaleMod;
     public float sizeZoomMod;
@@ -18,6 +23,13 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+
+        }
+
         UpdateSpeed();
         UpdateSize();
         UpdateZoom();
@@ -119,10 +131,18 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         //If collided object is an obstacle, take damage and shrink the bubble
-        if (collider.gameObject.CompareTag(obstacleTagName))
+        if (collider.gameObject.CompareTag(obstacleTagName) && life > 1)
+        {
+            audioSource.PlayOneShot(popSound);
+            GotHitFeedback();
+            BubbleLoseLife();
+        }
+
+        else if (collider.gameObject.CompareTag(obstacleTagName) && life == 1)
         {
             LoseGame();
         }
+
         else if (collider.gameObject.CompareTag(bubbleTagName))
         {
             increaseSize += 0.3f;
@@ -132,5 +152,32 @@ public class PlayerController : MonoBehaviour
 
             CollectBubble(finalSize);
         }
+    }
+
+    private void BubbleLoseLife()
+    {
+        life = life - 1;
+    }
+
+    private void hideBubble()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    private void showBubble()
+    {
+        GetComponent<MeshRenderer>().enabled = true;
+    }
+    private void GotHitFeedback()
+    {
+        isInvisble = true;
+        for (int i = 0; i < 3; i++)
+        {
+            float delay = 0.5f * (i+ 1); //0.5s, 1.0s, 1.5s
+
+            Invoke(nameof(hideBubble), delay); 
+            Invoke(nameof(showBubble), delay + 0.15f);
+        }
+        
     }
 }
