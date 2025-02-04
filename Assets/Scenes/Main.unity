@@ -921,7 +921,7 @@ PrefabInstance:
       objectReference: {fileID: 1025306480}
     - target: {fileID: -6911682469760481818, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: totalUnitsToGo
-      value: 2387
+      value: 2387.8
       objectReference: {fileID: 0}
     - target: {fileID: -6911682469760481818, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: totalDistanceToGo
@@ -1017,7 +1017,7 @@ PrefabInstance:
       objectReference: {fileID: -876546973899608171, guid: de363859c785afa43bae6e68ef606b5d, type: 3}
     - target: {fileID: 1431228490834585168, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: strafeSpeed
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1431228490834585168, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: floatJumpSpeed
@@ -1043,6 +1043,14 @@ PrefabInstance:
       propertyPath: musicPlayer
       value: 
       objectReference: {fileID: 330585549}
+    - target: {fileID: 2424871258882554148, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
+      propertyPath: maxTimeBetweenSpawns
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424871258882554148, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
+      propertyPath: minTimeBetweenSpawns
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2424871258882554148, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: levels.Array.data[0].spawnObjects.Array.size
       value: 3
@@ -1100,11 +1108,19 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6548608971423308934, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
+      propertyPath: size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548608971423308934, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: loseScreen
       value: 
       objectReference: {fileID: 1918082730}
     - target: {fileID: 6548608971423308934, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: sizeZoomMod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548608971423308934, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
+      propertyPath: sizeSpeedMod
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6674786550196606366, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
@@ -2168,10 +2184,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1147233681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2142561410
 MonoBehaviour:

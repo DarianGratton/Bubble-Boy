@@ -30,8 +30,9 @@ public class SpawnBubblesDirector : MonoBehaviour
         
         GameObject newBubble = Instantiate(Bubble);
         // float
-        float yVelocity = controller.size;
-        newBubble.GetComponent<BubblePU>().AddSpeed(yVelocity);
-        
+        float yVelocity = controller.size * controller.sizeSpeedMod;
+        Rigidbody bubble = newBubble.GetComponent<BubblePU>().GetComponent<Rigidbody>();
+
+        bubble.linearVelocity = new Vector3(bubble.linearVelocity.x, yVelocity, bubble.linearVelocity.z);
     }
 }

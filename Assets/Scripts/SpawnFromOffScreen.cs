@@ -18,7 +18,6 @@ public class SpawnFromOffScreen : MonoBehaviour
     [SerializeField] float StartVelocityX;
     [SerializeField] float StartVelocityY;
     [SerializeField] bool leftOrRight = false;
-    [SerializeField, Range(0.1f, 1f)] float percentageOfSpawnBounds = 1.0f;
     Rigidbody rb;
 
     //How far off camera to spawn?
