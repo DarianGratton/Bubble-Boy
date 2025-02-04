@@ -68,7 +68,7 @@ public class FollowBound : MonoBehaviour
     // }
 
     IEnumerator UnlockPlayer(){
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.35f);
         player.constraints = RigidbodyConstraints.None;
         player.constraints = RigidbodyConstraints.FreezePositionZ;
         Collider sphere = player.gameObject.GetComponent<SphereCollider>();
@@ -77,7 +77,7 @@ public class FollowBound : MonoBehaviour
 
     //Stop teleporting bounds bug that knocks ball off at runtime.
     IEnumerator WaitToEnable(){
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         bottom.SetActive(true);
         top.SetActive(true);
         left.SetActive(true);
