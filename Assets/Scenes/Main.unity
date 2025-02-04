@@ -949,7 +949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043556260234018690, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: gravityForce
-      value: 0.6
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1294081475279089252, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: m_Enabled
@@ -1021,11 +1021,11 @@ PrefabInstance:
       objectReference: {fileID: -876546973899608171, guid: de363859c785afa43bae6e68ef606b5d, type: 3}
     - target: {fileID: 1431228490834585168, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: strafeSpeed
-      value: 1.5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1431228490834585168, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: floatJumpSpeed
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1641073229714134316, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: m_CollisionDetection
@@ -1133,7 +1133,7 @@ PrefabInstance:
       objectReference: {fileID: 1918082730}
     - target: {fileID: 6548608971423308934, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: sizeZoomMod
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6548608971423308934, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: sizeSpeedMod
