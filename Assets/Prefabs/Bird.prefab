@@ -120,6 +120,18 @@ MonoBehaviour:
   StartVelocityY: 0
   leftOrRight: 1
   percentageOfSpawnBounds: 0.5
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001849492976900931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf0751d1abfd4a45b4cb896de9d01cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 120
 --- !u!114 &486122271932694736
 MonoBehaviour:
   m_ObjectHideFlags: 0
