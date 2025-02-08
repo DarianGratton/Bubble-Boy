@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public Canvas loseScreen;
     float increaseSize;
 
-
+    bool pauseVelocity = false;
     void Awake()
     {
         UpdateSpeed();
@@ -103,8 +104,10 @@ public class PlayerController : MonoBehaviour
 
         //Update camera velocity
         Rigidbody rbCam = Camera.main.GetComponent<Rigidbody>();
-        if (rbCam)
+        if (rbCam && pauseVelocity == false)
             rbCam.linearVelocity = new Vector3(rbCam.linearVelocity.x, size * sizeSpeedMod, rbCam.linearVelocity.z);
+        else if(pauseVelocity == true)
+            rbCam.linearVelocity = Vector3.zero;
     }
 
  
@@ -112,10 +115,23 @@ public class PlayerController : MonoBehaviour
     private void UpdateZoom()
     {
         Vector3 camPos = Camera.main.transform.position;
-        Camera.main.transform.position = new Vector3(camPos.x, camPos.y, -size * sizeZoomMod - 0.5f);
+        Vector3 finalPos = new Vector3(camPos.x, camPos.y, -size * sizeZoomMod - 0.5f);
+        StartCoroutine(SmoothZoom(camPos,finalPos));
     }
 
-
+    IEnumerator SmoothZoom(Vector3 startPos, Vector3 finalPos){
+        float percent = 0f;
+        float rate = 0.04f;
+        pauseVelocity = true;
+        while (percent < 0.99f)
+        {
+            percent += rate;
+            Vector3 newPos = Vector3.Lerp(startPos, finalPos, percent);
+            Camera.main.transform.position = newPos;
+            yield return new WaitForEndOfFrame();
+        }
+        pauseVelocity = false;
+    }
 
     private void OnTriggerEnter(Collider collider)
     {
