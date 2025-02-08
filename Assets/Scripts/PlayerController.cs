@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool GOD_MODE; // for easier debugging
     public float sizeSpeedMod;
     public float sizeScaleMod;
     public float sizeZoomMod;
@@ -119,7 +120,8 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         //If collided object is an obstacle, take damage and shrink the bubble
-        if (collider.gameObject.CompareTag(obstacleTagName))
+        //ignore if god mode on.
+        if (collider.gameObject.CompareTag(obstacleTagName) && GOD_MODE == false)
         {
             LoseGame();
         }

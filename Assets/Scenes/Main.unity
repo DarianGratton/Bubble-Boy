@@ -1116,6 +1116,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6548608971423308934, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
+      propertyPath: GOD_MODE
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548608971423308934, guid: 203c06c0dade6ea40a6e6fa8a4fa0a17, type: 3}
       propertyPath: loseScreen
       value: 
       objectReference: {fileID: 1918082730}
