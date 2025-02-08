@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices.WindowsRuntime;
-// using JetBrains.Rider.Unity.Editor;
 using UnityEditor;
 using UnityEngine;
 
