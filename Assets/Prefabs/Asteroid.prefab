@@ -67,7 +67,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3199362265423141486}
   serializedVersion: 4
-  m_Mass: 100
+  m_Mass: 33
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -102,7 +102,6 @@ MonoBehaviour:
   StartVelocityX: 0
   StartVelocityY: 0
   leftOrRight: 0
-  percentageOfSpawnBounds: 0.9
 --- !u!114 &8881510278450501433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 6609337249155862677}
   minScale: 0.3
-  maxScale: 1.5
+  maxScale: 0.9
   changeMass: 1
 --- !u!114 &3424410005269634327
 MonoBehaviour:

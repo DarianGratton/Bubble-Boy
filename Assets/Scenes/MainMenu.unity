@@ -1335,6 +1335,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 4673920467944824444, guid: 22f3044252d2e0443b12395a8488e476, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1244
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673920467944824444, guid: 22f3044252d2e0443b12395a8488e476, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 869
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673920467944824444, guid: 22f3044252d2e0443b12395a8488e476, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1160.9541
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673920467944824444, guid: 22f3044252d2e0443b12395a8488e476, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.61196643
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673920467944824444, guid: 22f3044252d2e0443b12395a8488e476, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7908838
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673920467944824444, guid: 22f3044252d2e0443b12395a8488e476, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -104.536
+      objectReference: {fileID: 0}
     - target: {fileID: 5160837398862366211, guid: 22f3044252d2e0443b12395a8488e476, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.981
@@ -1373,6 +1397,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5160837398862366211, guid: 22f3044252d2e0443b12395a8488e476, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893623714674406432, guid: 22f3044252d2e0443b12395a8488e476, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

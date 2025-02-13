@@ -1,9 +1,9 @@
 # Bubblenaut
 Game created for Vancouver Global Game Jam 2025
 
-Bubblenaut is a game about an ant following his dreams and shooting for the moon, literally. You play as the Bubblenaut, who aims to ascend skyward to the moon inside a bubble. Collect bubbles to increase your speed, but beware, each one also makes your bubble bigger, and a single touch from anything else will burst it. Can you guide the Bubblenaut safely to his destination, or will you send them crashing down to their untimely demise? 
+BubbleNaut is a 2.5D vertical climber where you play as a tiny yet hugely ambitious ant determined to reach the moon—using nothing but a fragile bubble. Dodge falling debris, collect bubbles to gain altitude faster, and float to the rhythm of chill lo-fi beats. Will you guide BubbleNaut to his dream, or will he plummet back to Earth?
 
-[Play Bubblenaut here!](https://greeneggsandsam.itch.io/bubblenaut)
+[Play Bubblenaut here!](https://benniekhademgames.itch.io/bubblenautgame)
 
 ## Screenshots
 
