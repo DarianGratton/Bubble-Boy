@@ -16,14 +16,12 @@ public class PlayerGravity : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        AddGravity();
+        AddGravity(Time.fixedDeltaTime);
     }
 
-    void AddGravity(){
-        rb.AddForce(new Vector3(0, -gravityForce, 0));
+    void AddGravity(float dTime){
+        rb.AddForce(new Vector3(0, -gravityForce*dTime, 0));
     }
-
-    
 }
